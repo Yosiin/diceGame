@@ -1,0 +1,341 @@
+/*
+ *	GENERAL
+ ------------------------------------------------------ */
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Montserrat:wght@300;400;500;700&display=swap');
+
+:root {
+	--bg: #2e2c31;
+	--active: #995D41;
+	--playGround: #A5B0B8;
+	--btn: #BD8C53;
+	--pdng: #FBF9FA;
+}
+
+/* border-box */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* clearfix */
+.group:before,
+.group:after { content: " "; display: table; }
+.group:after { clear: both; }
+
+
+body {
+	color: var(--bg);
+	background: var(--bg);
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	text-align: center;
+	margin: 0;
+	height: 100vh;
+}
+
+a, button {
+	color: inherit;
+	text-decoration: none;
+	/*transition: .2s all ease-in-out;*/
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+.title {
+	margin: 1rem;
+	color: var(--active);
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 1rem 0;
+}
+
+.playground {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	width: 60%;
+	height: 60%;
+	border-radius: 1.5rem;
+}
+
+.player-0,
+.player-1,
+.playSettings {
+	flex-basis: 33.4%;
+}
+
+.player-0,
+.player-1 {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	row-gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--playGround);
+}
+
+.player-0.active,
+.player-1.active {
+	font-weight: 700;
+	color: var(--active);
+}
+
+
+.player-0 .score-0,
+.player-1 .score-1,
+.player-0 .currentScore-0,
+.player-1 .currentScore-1 {
+	background-color: var(--pdng);
+	padding: 0.5rem 3.5rem;
+	border-radius: 3rem;
+	box-shadow: 3px 4px 5px var(--bg);
+}
+
+.player-0 {
+	border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.player-1 {
+	border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.active {
+	background-color: var(--active);
+}
+
+.playSettings {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: var(--playGround);
+	height: 100%;
+}
+
+.cube-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 35%;
+	height:auto;
+}
+
+.settings {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.settings a {
+	background-color: var(--btn);
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+	transition: 0.5s;
+	box-shadow: 3px 4px 5px var(--bg);
+}
+
+.settings a:hover,
+.settings a:active {
+	color: var(--pdng);
+	background-color: var(--active);
+	transition: 0.5s;
+	box-shadow: none;
+}
+
+@media screen and (max-width: 1650px) {
+	body {
+	background-color: rgb(70, 135, 165);
+	}
+
+	.player-0 .score-0,
+	.player-1 .score-1,
+	.player-0 .currentScore-0,
+	.player-1 .currentScore-1 {
+	padding: 0.5rem 2.5rem;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	body {
+	background-color: rgb(223, 195, 39);
+	}
+
+	.playground {
+		width: 80%;
+		height: 50%;
+	}
+
+	
+	.player-0 .score-0,
+	.player-1 .score-1,
+	.player-0 .currentScore-0,
+	.player-1 .currentScore-1 {
+	padding: 0rem 1rem;
+	}
+
+	.settings a {
+		padding: 0.2rem 0.5rem;
+	}
+
+	p {
+		margin: 8px;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	body {
+		background-color: rgb(163, 25, 106);
+	}
+
+	.title {
+		color: var(--pdng);
+	}
+
+	p {
+		margin: 2px;
+	}
+
+	.playground {
+		padding: 0 0.75rem;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 95%;
+	}
+
+	.player-0,
+	.player-1,
+	.playSettings {
+		width: 100%;
+	}
+
+	.playSettings {
+		order: 1;
+		border-radius: 1.5rem 1.5rem 0 0;
+		padding: 1.5rem 0 0 0;
+		height: auto;
+	}
+	
+	.cube-img {
+		padding-top: 1.5rem;
+	}
+
+	.settings {
+		padding: 1.5rem 0;
+	}
+
+	.player-0 {
+		row-gap: 1rem;
+		padding: 1.5rem 0;
+		order: 2;
+		border-radius: 0;
+	}
+	.player-1 {
+		row-gap: 1rem;
+		padding: 1.5rem 0;
+		order: 3;
+		border-radius: 0 0 1.5rem 1.5rem;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SPRAV responzivitu kocky podľa seba
+
+			<div class="cube">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+
+.cube {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 13%;
+	height: 18%;
+	background-color: steelblue;
+}
+
+span {
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	background-color: black;
+	border-radius: 50%;
+}
+
+span:nth-child(1){
+	top:10px;
+	left:17.5px;
+}
+
+span:nth-child(2){
+	top:40px;
+	left:17.5px;
+}
+
+span:nth-child(3){
+	bottom:10px;
+	left:17.5px;
+}
+
+span:nth-child(4){
+	top:10px;
+	right:17.5px;
+}
+
+span:nth-child(5){
+	top:40px;
+	right:17.5px;
+}
+
+span:nth-child(6){
+	bottom:10px;
+	right:17.5px;
+}
+
+
+*/
